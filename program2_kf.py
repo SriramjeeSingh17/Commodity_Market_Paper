@@ -20,8 +20,7 @@ a = a.reshape(len(a), 1)
 b = np.concatenate((a, np.ones(a.shape)), axis=1)
 unanticipated_prod_mat = b[:, np.newaxis, :]
 
-#delta = 1e-5
-#trans_cov = (delta/(1 - delta))*np.eye(2)
+
 trans_cov = 0.5*np.eye(2)
 
 kf = KalmanFilter(n_dim_obs = 1, n_dim_state = 2, initial_state_mean = [-1.06, 0], initial_state_covariance = 0.5*np.ones((2,2)), transition_matrices = np.eye(2), observation_matrices = unanticipated_prod_mat, observation_covariance = 0.5, transition_covariance = trans_cov) 
@@ -30,7 +29,6 @@ state_means, state_covs = kf.filter(Price_change)
 slope = state_means[:, 0]
 intercept = state_means[:, 1]
 
-#plt.plot(slope[5:]) 
 
 df_coef = pd.DataFrame({'Slope Coefficient': slope, 'Intercept Coefficient': intercept})
 df_coef['Period'] = np.arange(len(df_coef)) + 1
@@ -72,18 +70,5 @@ plt.ylabel('Slope coefficient')
 plt.legend(loc='upper right') 
 plt.show()
 r2_score(df_coef['Slope Coefficient'], p(df_coef['Period']))
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
