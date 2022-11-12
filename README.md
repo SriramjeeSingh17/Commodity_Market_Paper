@@ -3,7 +3,7 @@
 This repository contains codes for the paper. The article deduced that when the USDA production estimate is 1% higher than the average private analysts' estimate, futures price goes down by 1% using Linear Regression. Kalman filtering, a Bayesian state-space model, confirmed the existence of time-varying impact of the WASDE report on corn futures prices. Several prediction models tried as well. Please find below the citation and the codes details. Thanks!
 
 
-@article{ssingh_2021, title={Time-Varying Impact of the WASDE Report on Corn Futures Prices}, url={https://drive.google.com/file/d/1BzRdvEAL9JcMR23XFs60_5xWPhIx7Gzg/view}, author={Singh, Sriramjee}, year={2021}}
+@article{ssingh_2021, title={Time-Varying Impact of the WASDE Report on Corn Futures Prices}, url={https://drive.google.com/file/d/1BzRdvEAL9JcMR23XFs60_5xWPhIx7Gzg/view?usp=share_link}, author={Singh, Sriramjee}, year={2021}}
 
 
 #### program2_kf.py
