@@ -77,10 +77,7 @@ df_price['Year'] = df_price['Year'].astype(int)
 df_price['Date'] = df_price['Date'].map(lambda x: x.strip())
 df_price = df_price.sort_values(['Date'], ascending=[0])
 
-'''Correct this later, this is happening for Nov 2018, Jan 2019 and Feb 2019'''
-#abc = df_price[df_price.duplicated(['Date'])]
-#df_price = df_price.drop_duplicates(subset = ['Date'], keep = 'first') 
-
+ 
 '''Barchart daily futures price data: Open price is recorded on previous day at 7pm CST after 1998, before 1998 Open price recordrd at 8:30 am CST same day, Close price recorded on same day at 1:20 pm CST throughout'''
 df_price['Open_next_1'] = df_price['Open'].shift(1)
 df_price['Open_prev_1'] = df_price['Open'].shift(-1)
